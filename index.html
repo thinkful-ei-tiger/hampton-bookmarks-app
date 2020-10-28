@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookmark App</title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+    <header>
+        <div id="top" class="w3-container w3-red">
+            <h1 class="app-title">My Bookmarks</h1>
+            
+            <select name="rating-select" id="selection">
+                <option value="five-stars">Filter by</option>
+                <option value="five-stars">5 stars</option>
+                <option value="five-stars">4 stars</option>
+                <option value="five-stars">3 stars</option>
+                <option value="five-stars">2 stars</option>
+                <option value="five-stars">1 stars</option>
+            </select>
+            <button onclick="showHiddenForm()" type="button">Create new bookmark</button><br>
+        </div>
+    </header>
+        <div id="bookmark-data" class="hidden">
+            <form>
+                <label for="bookmark-title">Bookmark title</label><br>
+                <input type="text" id="bookmark-title" name="Bookmark Title" placeholder="Name your bookmark"><br>
+                <label for="link">URL</label><br>
+                <input type="url" id="url" name="url" placeholder="Paste link here"><br>
+                <label for="description">Description</label><br>
+                <input type="text" id="description" name="description" placeholder="Give a description"><br>
+                <input type="submit" name ="submit" value="submit">
+            </form>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>
+
