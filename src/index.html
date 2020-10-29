@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--top of the page-->
+<head>
+    <title>My Bookmark App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <!--other links go here-->
+    <!--Welcome and Nav/dropdowns-->
+    <header>
+        <div id="top">
+            <h1 class="app-title">My Bookmarks</h1>
+        </div>
+        <!--filter dropdown-->
+        <div id="rating-dropdown">
+            <select name="rating-select" id="selection">
+                <option value="five-stars">Filter by</option>
+                <option value="five-stars">5 stars</option>
+                <option value="five-stars">4 stars</option>
+                <option value="five-stars">3 stars</option>
+                <option value="five-stars">2 stars</option>
+                <option value="five-stars">1 stars</option>
+            </select>
+            <!--Show hidden form button-->
+            <button class="showHidden" type="button">Enter New Bookmark</button><br>
+        </div>
+    </header>
+</head>
+
+<body>
+    <hr>
+    <!--Where things populate-->
+    <!--new bookmark form-->
+        <div id="bookmark-data" class="hidden">
+            <form class='bookmarkData'>
+                <label for="bookmark_title_form">Bookmark title</label><br>
+                <input type="text" id="bookmark_title_form" name="title" class='js-title' placeholder="Name your bookmark"><br>
+                <label for="link">URL</label><br>
+                <input type="url" id="url" name="url" class='js-url'placeholder="Paste link here"><br>
+                <label for="description">Description</label><br>
+                <input type="text" id="description" name="description" placeholder="Give a description"><br>
+                <input type="submit" name ="submit" value="submit">
+            </form>
+        </div>
+        <hr>
+        <!--list of bookmarks-->
+        <div>
+            <ul class="bookmark-list">
+            </ul>
+        </div>
+        <!--scripts-->
+        <script 
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+        <script type="module" src="index.js"></script>
+        
+        
+</body>
+</html>
+
