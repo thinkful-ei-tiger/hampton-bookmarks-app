@@ -1,8 +1,8 @@
 const titles=[]
 
 function addBookmarkTitle(title){
-    console.log(this)
-    this.titles.push(title);
+    titles.push(title);
+    console.log(titles)
 };
 
 export default{
