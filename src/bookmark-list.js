@@ -21,3 +21,4 @@ function bindEventListeners(){
 export default{
     bindEventListeners
 }
+

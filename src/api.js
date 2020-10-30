@@ -1,18 +1,7 @@
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/hampton/bookmarks';
 
-/* idk what this is but they had it on the shipping list so come back to this!
-* @param {string} url 
- * @param {object} options 
- * @returns {Promise} - resolve on all 2xx responses with JSON body
- *                    - reject on non-2xx and non-JSON response with 
- *                      Object { code: Number, message: String }*/
-
- //const listApiFetch(...args){
-   // return resizeBy.json();
-    //}
-
-
  //get bookmark
+ 
  /*
 const getBookmark = function () {
     return listApiFetch(`${BASE_URL}/bookmarks`);
