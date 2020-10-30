@@ -1,16 +1,22 @@
-import store from './store.mjs'
-//import api from './api.js'
+import store from './store.js'
+import api from './api.js'
 
 
 function handleNewBookmarkSubmit(){
   $('.bookmarkData').submit(function(event){
        event.preventDefault();
-        const newBookmarkTitle = $('.js-title').val();
-        console.log(newBookmarkTitle)
-        $('.js-title').val('');
-        store.addBookmarkTitle(newBookmarkTitle);
-    })
-
+       console.log($('.js-title').val(),$('.js-url').val())
+        const newBookmark = 
+            {
+                'title': $('.js-title').val(),
+                'url': $('.js-url').val(),
+                'desc': $('.js-desc').val(),
+                'rating': parseInt($('#selectedRating').val())
+            }
+        $('.hidden').val('');
+        store.addBookmark(newBookmark);
+        api.createBookmark(newBookmark)
+    });
 }
 
 

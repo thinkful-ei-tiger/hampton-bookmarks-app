@@ -39,7 +39,16 @@
                 <label for="link">URL</label><br>
                 <input type="url" id="url" name="url" class='js-url'placeholder="Paste link here"><br>
                 <label for="description">Description</label><br>
-                <input type="text" id="description" name="description" placeholder="Give a description"><br>
+                <input type="text" id="description" name="description" class='js-desc' placeholder="Give a description"><br>
+                
+                <Select id='selectedRating'class="rating">
+                    <option   value="5" ><label for="star5" title="">5 stars</label>
+                    <option   value="4" ><label for="star4" title="">4 stars</label>
+                    <option   value="3" ><label for="star3" title="">3 stars</label>
+                    <option   value="2" ><label for="star2" title="">2 stars</label>
+                    <option   value="1" ><label for="star1" title="">1 star</label>
+                </select>
+
                 <input type="submit" name ="submit" value="submit">
             </form>
         </div>
