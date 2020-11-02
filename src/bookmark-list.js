@@ -1,16 +1,17 @@
-//import $ from 'jquery';
+//import $ from 'jquery'
 import storeBookmarks from './store.js'
 import store from './store.js'
 import api from './api.js'
 
 
 function generateNewBookmarkElement(){
+   
     
     $('.bookmark-list').html(`
         <div>
             <ul class="bookmark-list">
-                <li class="js-bookmark-element" name="${store.storeBookmarks[0].title}">
-                    ${store.storeBookmarks[0].title}
+                <li class="js-bookmark-element" name="${storeBookmarks}">
+                ${store.storeBookmarks[0].title}
                         <div class="bookmark-list-controls">
                         <button class="bookmark-item-edit js-item-edit">
                         <span class="button-label">edit</span>
@@ -25,10 +26,10 @@ function generateNewBookmarkElement(){
         console.log(`${store.storeBookmarks[0].title}`);
 }
 
-//function generateBookmarkListString(newBookmark){
-    //const bookmarks= newBookmark.map((newBookmark) => generateNewBookmarkElement(newBookmark));
-    //return bookmarks.join('')
-//}
+function generateBookmarkListString(newBookmark){
+    const bookmarks= newBookmark.map((newBookmark) => generateNewBookmarkElement(newBookmark));
+    return bookmarks.join('')
+}
 
 function render(){
     $('.bookmark-list').html(generateNewBookmarkElement);

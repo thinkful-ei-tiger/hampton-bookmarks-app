@@ -57,7 +57,7 @@ function createBookmark(newBookmark) {
   };
 
 
-//when we update descriptions
+
 /*
 const updateBookmark = function (id, updateDescription) {
     const newDescription = JSON.stringify(updateDescription);

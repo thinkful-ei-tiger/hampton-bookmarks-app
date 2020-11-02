@@ -5,15 +5,18 @@ import bookmarkList from './bookmark-list.js';
 import store from './store.js';
 
 //storeBookmarks is just a name to remind me that im using info from the api version of storeBookmarks
+
+
 function main(){
    api.getBookmark()
         .then((storeBookmarks) =>{
-      storeBookmarks.forEach((newBookmark)=> store.addBookmark(newBookmark));
-      bookmarkList.render()
+          storeBookmarks.forEach((newBookmark)=> store.addBookmark(newBookmark));
+          bookmarkList.render()
+          console.log(storeBookmarks)
     })
 
     bookmarkList.bindEventListeners();
-    
+    bookmarkList.render()
 }
 
 $(main)

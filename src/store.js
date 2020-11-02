@@ -5,13 +5,20 @@ function findById(id){
 }
 
 function addBookmark(newBookmark){
-    console.log('test of addBookmark() being called');
-    storeBookmarks.push(newBookmark);
+    console.log(newBookmark);
+    this.storeBookmarks.push(newBookmark);
     console.log(storeBookmarks);
 };
 
+function findAndUpdate(id, newData) {
+    const currentItem = this.findById(id);
+    Object.assign(currentItem, newData);
+    console.log(id);
+  };
+
 
 export default{
+    findAndUpdate,
     findById,
     addBookmark,
     storeBookmarks
