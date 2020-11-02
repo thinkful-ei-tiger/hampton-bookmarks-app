@@ -1,10 +1,18 @@
-const titles=[]
+const storeBookmarks=[]
+
+function findById(id){
+    return storeBookmarks.find(currentBookmark =>currentBookmark.id ===id);
+}
 
 function addBookmark(newBookmark){
-    titles.push(newBookmark);
-    
+    console.log('test of addBookmark() being called');
+    storeBookmarks.push(newBookmark);
+    console.log(storeBookmarks);
 };
 
+
 export default{
-    addBookmark
+    findById,
+    addBookmark,
+    storeBookmarks
 }

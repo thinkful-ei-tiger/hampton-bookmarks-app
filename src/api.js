@@ -32,12 +32,11 @@ const listApiFetch = function (...args) {
       }
 
       // otherwise, return the json as normal resolved Promise
+      console.log(data)
       return data;
     });
+    
 };
-
-
-
 
  //get bookmark
  
@@ -45,8 +44,7 @@ const getBookmark = function () {
     return listApiFetch(`${BASE_URL}`);
   };
   
-//create new bookmark
-const createBookmark = function (newBookmark) {
+function createBookmark(newBookmark) {
     const jsonBookmark= JSON.stringify(newBookmark);
     console.log(jsonBookmark)
     return listApiFetch(`${BASE_URL}`, {
@@ -57,6 +55,7 @@ const createBookmark = function (newBookmark) {
      body: jsonBookmark
     });
   };
+
 
 //when we update descriptions
 /*
@@ -80,10 +79,11 @@ const updateBookmark = function (id, updateDescription) {
 
 //exports
  export default{
+      BASE_URL,
      //CRUD/Post
      createBookmark,
      //read/Get
-     getBookmark,
+     getBookmark
      //update/Patch
      //updateBookmark,
      //delete
