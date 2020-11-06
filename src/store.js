@@ -1,25 +1,54 @@
-const storeBookmarks=[]
+const storeBookmarks=[{
+    title: "Test",
+    url: "http://test.com",
+    desc: "description",
+    rating: 5},
+    {title: "Test 2",
+    url: "http://test2.com",
+    desc: "description",
+    rating: 5}
+];//this would be empty at final
+const adding =false;
+let error = null;
+filter:0
+let hideCheckeditems =false;
+
 
 function findById(id){
-    return storeBookmarks.find(currentBookmark =>currentBookmark.id ===id);
+    console.log(id)
+    return this.storeBookmarks.find(currentBookmark =>currentBookmark.id ===id);
+    
 }
 
-function addBookmark(newBookmark){
-    console.log(newBookmark);
-    this.storeBookmarks.push(newBookmark);
-    console.log(storeBookmarks);
+function addBookmark(bookmark){
+    this.storeBookmarks.push(bookmark);
+};
+
+function findAndDelete(id){
+    this.storeBookmarks = this.storeBookmarks.filter(currentBookmark=>currentBookmark.id !==id);
+};
+
+function toggleCheckedFilter(){
+    this.hideCheckeditems =!this.hideCheckeditems;
 };
 
 function findAndUpdate(id, newData) {
-    const currentItem = this.findById(id);
-    Object.assign(currentItem, newData);
-    console.log(id);
+    const currentBookmark = this.storeBookmarks.findById(id);
+    Object.assign(currentBookmark, newData);
   };
 
+function setError(error){
+    this.error =error;
+};
 
 export default{
-    findAndUpdate,
+    storeBookmarks,
+    error,
+    hideCheckeditems,
     findById,
     addBookmark,
-    storeBookmarks
-}
+    findAndDelete,
+    toggleCheckedFilter,
+    findAndUpdate,
+    setError
+};

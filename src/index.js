@@ -1,6 +1,5 @@
 /* eslint-disable strict */
 import api from './api.js'
-import storeBookmarks from './store.js';
 import bookmarkList from './bookmark-list.js';
 import store from './store.js';
 
@@ -10,14 +9,13 @@ import store from './store.js';
 function main(){
    api.getBookmark()
         .then((storeBookmarks) =>{
-          storeBookmarks.forEach((newBookmark)=> store.addBookmark(newBookmark));
+          storeBookmarks.forEach((storeBookmark)=> store.addBookmark(storeBookmark));
           bookmarkList.render()
-          console.log(storeBookmarks)
     })
 
     bookmarkList.bindEventListeners();
     bookmarkList.render()
-}
+};
 
 $(main)
 

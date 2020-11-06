@@ -1,4 +1,4 @@
-const BASE_URL = 'https://thinkful-list-api.herokuapp.com/hampton/bookmarks';
+const BASE_URL = 'https://thinkful-list-api.herokuapp.com/hampton';
 
 
 const listApiFetch = function (...args) {
@@ -41,51 +41,46 @@ const listApiFetch = function (...args) {
  //get bookmark
  
 const getBookmark = function () {
-    return listApiFetch(`${BASE_URL}`);
+    return listApiFetch(`${BASE_URL}/bookmarks`);
   };
   
-function createBookmark(newBookmark) {
-    const jsonBookmark= JSON.stringify(newBookmark);
-    console.log(jsonBookmark)
-    return listApiFetch(`${BASE_URL}`, {
+function createBookmark(bookmark) {
+    const newBookmark= JSON.stringify(bookmark);
+    return listApiFetch(`${BASE_URL}/bookmarks`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-     body: jsonBookmark
+     body: newBookmark
     });
   };
 
 
 
-/*
-const updateBookmark = function (id, updateDescription) {
-    const newDescription = JSON.stringify(updateDescription);
+
+const updateBookmark = function (id, updateData) {
+    const newData = JSON.stringify(updateData);
     return listApiFetch(`${BASE_URL}/bookmarks/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: newDescription
+      body: newData
     });
-  };*/
+  };
 
-//delete bookmark
-  /*const deleteBookmark = function (id) {
+
+  const deleteBookmark = function (id) {
     return listApiFetch(BASE_URL + '/bookmarks/' + id, {
       method: 'DELETE'
     });
-  };*/
+  };
 
 //exports
  export default{
       BASE_URL,
-     //CRUD/Post
-     createBookmark,
-     //read/Get
-     getBookmark
-     //update/Patch
-     //updateBookmark,
-     //delete
-     //deleteBookmark
+      getBookmark,
+      createBookmark,
+      updateBookmark,
+      deleteBookmark
  };

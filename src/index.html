@@ -2,7 +2,7 @@
 <html lang="en">
 <!--top of the page-->
 <head>
-    <title>My Bookmark App</title>
+    <title>Bookmark List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
@@ -12,19 +12,24 @@
         <div id="top">
             <h1 class="app-title">My Bookmarks</h1>
         </div>
+        
         <!--filter dropdown-->
-        <div id="rating-dropdown">
+        <div id="nav">
+            <button type="button">+ New</button>
             <select name="rating-select" id="selection">
-                <option value="five-stars">Filter by</option>
-                <option value="five-stars">5 stars</option>
-                <option value="five-stars">4 stars</option>
-                <option value="five-stars">3 stars</option>
-                <option value="five-stars">2 stars</option>
-                <option value="five-stars">1 stars</option>
+                <option value="Filter by rating">Filter by</option>
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+                <option value="2">2 stars</option>
+                <option value="1">1 stars</option>
             </select>
             <!--Show hidden form button-->
-            <button class="showHidden" type="button">Enter New Bookmark</button><br>
         </div>
+        <!--<div>
+            <input type="checkbox" id="filter-checked" class="filter-checked js-filter-checked" />
+            <label for="filter-checked">Hide Checked</label>
+          </div>-->
     </header>
 </head>
 
@@ -32,7 +37,7 @@
     <hr>
     <!--Where things populate-->
     <!--new bookmark form-->
-        <div id="bookmark-data" class="hidden">
+        <div id="bookmark-data" class="container">
             <form class='bookmarkData'>
                 <label for="bookmark_title_form">Bookmark title</label><br>
                 <input type="text" id="bookmark_title_form" name="title" class='js-title' placeholder="Name your bookmark"><br>
@@ -48,14 +53,13 @@
                     <option   value="2" ><label for="star2" title="">2 stars</label>
                     <option   value="1" ><label for="star1" title="">1 star</label>
                 </select>
-
                 <input type="submit" name ="submit" value="submit">
             </form>
         </div>
         <hr>
-        
+
         <!--list of bookmarks-->
-    
+        
         <div>
             <ul class="bookmark-list">
             </ul>
